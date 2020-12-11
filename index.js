@@ -208,11 +208,11 @@ Practice accessing data above by console.log-ing following items:
 (no functions needed) */
 
 //(1) Name of the first artist (0th index) in the array
-// console.log(artists[0]);
+console.log(artists[0]);
 
 //(2) Bio of the third artist (2nd index) in the array 
 
-// console.log(artists[2]);
+console.log(artists[2]);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
@@ -246,11 +246,13 @@ Example born in 1901 and died in 1959 - included -- born in 1889 and died in 192
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(array){
-
-  if(array.years<="2000" && array.years>="1900"){
-    return array.name;
-  }else return "None";
-  
+  let newArray=[];
+  for(let i=0; i<array.length; i++){
+    if(array[i].years<="2000" && array[i].years>="1900"){
+      newArray.push(array[i].name);
+    }
+  }
+  return newArray;
 }
 console.log(get20s(artists));
 
@@ -292,16 +294,19 @@ Use addArtist to do the following:
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
 function addArtist(array){
-    let newArray = array.push({
-      id: 20,
-      name: "Daniel", 
-      years: "1991 - current day",
-      genre: "Web Design", 
-      nationality: "White and Black",
-      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    });
-  return newArray;
-}
+    array.push({
+    id: 20,
+    name: "Daniel", 
+    years: "1991 - current day",
+    genre: "Web Design", 
+    nationality: "White and Black",
+    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  });
+  return array;
+} 
+  
+  
+
 console.log(addArtist(artists));
 console.log(artists);
 
@@ -314,9 +319,13 @@ Use lotsOfArt to do the following:
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
 function lotsOfArt(array){
-  if(array.paintings >= 100){
-    return array.name;
-  }
+  let newArray=[];
+  for(let i=0; i<array.length; i++){
+    if(array[i].paintings>=100){
+      newArray.push(array[i].name);
+    }
+  } 
+  return newArray;
 }
 console.log(lotsOfArt(artists));
 
