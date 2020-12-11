@@ -171,7 +171,6 @@ button:hover{
     img{
         width:20%;
         height:20%;
-
     }
     
     .title_container{
@@ -200,7 +199,7 @@ button:hover{
         
     }
     .artist img{
-        width:50%;
+        width:80%;
     }
     .bio{
         height:20%;
